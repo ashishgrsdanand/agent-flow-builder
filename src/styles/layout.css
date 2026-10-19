@@ -1,0 +1,19 @@
+/* Page layout: header, three-column grid, side panel and its tabs */
+
+.app{display:flex;flex-direction:column;height:100vh;min-height:640px}
+header{display:flex;align-items:center;gap:8px;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap}
+.brand{display:flex;flex-direction:column;line-height:1.2;margin-right:8px}
+.brand b{font-size:15px;letter-spacing:-.01em}
+.brand span{font-size:12px;color:var(--ink-3)}
+main{flex:1;min-height:0;display:grid;grid-template-columns:240px minmax(0,1fr) 450px}
+main.wide{grid-template-columns:240px minmax(0,1fr) 720px}
+.side{border-left:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;min-height:0;min-width:0}
+.tabs{display:flex;align-items:center;gap:2px;padding:8px 12px 0;border-bottom:1px solid var(--line)}
+.tab{border:0;background:none;padding:8px 10px;border-bottom:2px solid transparent;color:var(--ink-2);font-weight:500;margin-bottom:-1px}
+.tab.on{color:var(--ink);border-bottom-color:var(--accent)}
+.tab.pulse{animation:pulse .9s ease-out}
+@keyframes pulse{0%{background:color-mix(in srgb,var(--accent) 25%,transparent)}100%{background:transparent}}
+@media (prefers-reduced-motion:reduce){.tab.pulse{animation:none}}
+.count{display:inline-block;min-width:18px;padding:0 5px;margin-left:4px;border-radius:9px;background:var(--warn-bg);color:var(--warn-ink);font-size:11px;text-align:center}
+.pane{flex:1;min-height:0;overflow:auto;padding:16px}
+.codepane{padding:0;display:flex;flex-direction:column;overflow:hidden}

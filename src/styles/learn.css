@@ -1,0 +1,12 @@
+/* Learn tab */
+
+.lsec details{border:1px solid var(--line);border-radius:9px;margin-bottom:8px;background:var(--panel)}
+.lsec summary{cursor:pointer;padding:9px 12px;font-weight:600;font-size:13px}
+.lbody{padding:0 14px 12px;color:var(--ink-2);font-size:13px;line-height:1.55}
+.lbody ol{margin:0 0 8px;padding-left:20px}
+.lbody li{margin-bottom:6px}
+.lbody p{margin:0 0 8px}
+.lbody pre{margin:4px 0 6px;padding:8px 10px;background:var(--code-bg);color:var(--code-ink);border:1px solid var(--line);border-radius:7px;font:12px/1.5 ui-monospace,Menlo,Consolas,monospace;overflow:auto;white-space:pre}
+.exrow{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.rrow{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--line)}
+.rrow:last-child{border-bottom:0}

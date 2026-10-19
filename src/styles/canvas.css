@@ -1,0 +1,56 @@
+/* Canvas: nodes, arrows, labels, zoom bar and the live simulation highlight */
+
+.stage{position:relative;min-width:0;min-height:0;background:var(--bg)}
+.canvas-wrap{position:absolute;inset:0;overflow:auto;background:var(--bg)}
+.zoomwrap{position:relative;overflow:hidden;width:calc(1500px * var(--z, 1));height:calc(900px * var(--z, 1))}
+.zoombar{position:absolute;left:12px;bottom:12px;z-index:10;display:flex;align-items:center;gap:2px;padding:3px;background:var(--panel);border:1px solid var(--line-2);border-radius:9px;box-shadow:0 2px 8px rgba(10,20,30,.12)}
+.zoombar button{border:0;background:none;min-width:28px;height:26px;padding:0 6px;border-radius:6px;font-size:14px}
+.zoombar button:hover{background:var(--panel-2)}
+.zoombar span{min-width:42px;text-align:center;font-size:12px;color:var(--ink-2)}
+.canvas-wrap.drop-hot{outline:2px dashed var(--accent);outline-offset:-6px}
+.canvas{position:relative;width:1500px;height:900px;transform:scale(var(--z, 1));transform-origin:0 0;background-image:radial-gradient(var(--grid) 1.1px,transparent 1.2px);background-size:22px 22px}
+#edges,#labels,#temp{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+#edges{z-index:1}
+#labels{z-index:5}
+#temp{z-index:6}
+#nodes{position:absolute;inset:0}
+.edge .vis{fill:none;stroke-width:2}
+.edge.route .vis{stroke:var(--ink-3);stroke-dasharray:6 5}
+.edge.handoff .vis{stroke:var(--accent);stroke-width:2.5}
+.edge.cond .vis{stroke:var(--cond);stroke-width:2.5}
+.edge .hit{fill:none;stroke:transparent;stroke-width:16;pointer-events:stroke;cursor:pointer}
+.edge:hover .vis{stroke:var(--ink)}
+.edge.sel .vis{stroke:var(--accent);stroke-width:3.5;stroke-dasharray:none}
+.mk-route{fill:var(--ink-3)}
+.mk-handoff{fill:var(--accent)}
+.mk-cond{fill:var(--cond)}
+.lab{pointer-events:all;cursor:pointer}
+.lab rect{fill:var(--panel);stroke:var(--line-2)}
+.lab text{font-size:11px;fill:var(--ink-2)}
+.lab.cond rect{stroke:var(--cond)}
+.lab.cond text{fill:var(--cond)}
+.lab.sel rect{stroke:var(--accent);stroke-width:2}
+#tempPath{fill:none;stroke:var(--accent);stroke-width:2.5;stroke-dasharray:3 5;stroke-linecap:round}
+.node{position:absolute;width:176px;height:64px;display:flex;align-items:center;padding:0 18px 0 16px;background:var(--panel);border:1px solid var(--line-2);border-radius:11px;box-shadow:0 1px 2px rgba(10,20,30,.08);cursor:grab;touch-action:none;user-select:none;z-index:2}
+.node::before{content:"";position:absolute;left:0;top:10px;bottom:10px;width:4px;border-radius:0 4px 4px 0;background:var(--c)}
+.node.sel{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 28%,transparent)}
+.node.drop{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 9%,var(--panel))}
+.node.dragging{cursor:grabbing;box-shadow:0 8px 22px rgba(10,20,30,.22)}
+.nmeta{min-width:0;flex:1}
+.nname{font-weight:600;font-size:13px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.nsub{font-size:11.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+.port{position:absolute;top:50%;width:14px;height:14px;margin-top:-7px;border-radius:50%;background:var(--panel);border:2px solid var(--ink-3);z-index:3}
+.port::after{content:"";position:absolute;inset:-9px}
+.port.in{left:-7px}
+.port.out{right:-7px;cursor:crosshair}
+.port.out:hover{border-color:var(--accent);background:var(--accent);transform:scale(1.18)}
+.empty{position:absolute;left:50%;top:150px;transform:translateX(-50%);text-align:center;color:var(--ink-3);pointer-events:none;max-width:340px}
+.empty b{display:block;color:var(--ink-2);font-size:15px;margin-bottom:4px}
+.node.seen{border-color:color-mix(in srgb,var(--live) 55%,var(--line-2))}
+.node.active{border-color:var(--live);box-shadow:0 0 0 4px color-mix(in srgb,var(--live) 30%,transparent)}
+.edge.walked .vis{stroke:var(--live);stroke-width:3;stroke-dasharray:none}
+.edge.now .vis{stroke:var(--live);stroke-width:3;stroke-dasharray:8 6;animation:dash .8s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-28}}
+@media (prefers-reduced-motion:reduce){.edge.now .vis{animation:none}}
+.mk-live{fill:var(--live)}
+.lab.walked rect{stroke:var(--live)}

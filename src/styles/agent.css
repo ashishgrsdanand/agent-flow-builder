@@ -1,0 +1,21 @@
+/* Agent tab: the editor for an agent or an arrow */
+
+.p-head{display:flex;gap:10px;align-items:center;margin-bottom:14px}
+.p-title{font-weight:600;font-size:15px;overflow-wrap:anywhere}
+.p-sub{font-size:12px;color:var(--ink-3)}
+.p-head .dot{width:12px;height:12px}
+label.f{display:block;margin:0 0 12px;font-size:12.5px;font-weight:600;color:var(--ink-2)}
+label.f .help{font-weight:400;color:var(--ink-3);margin-left:4px}
+label.f input,label.f textarea{display:block;width:100%;margin-top:5px;padding:7px 9px;border:1px solid var(--line-2);border-radius:7px;background:var(--panel-2);font-weight:400;color:var(--ink);resize:vertical}
+label.f textarea{line-height:1.45}
+.sect{margin:16px 0 6px;font-size:12.5px;font-weight:600;color:var(--ink-2)}
+.muted{margin:0 0 8px;color:var(--ink-3);font-size:12.5px}
+.conn{display:flex;align-items:center;gap:8px;padding:6px 8px;border:1px solid var(--line);border-radius:7px;margin-bottom:6px;background:var(--panel-2);font-size:13px}
+.conn .cl{color:var(--ink-3);font-size:12px}
+.conn .x{margin-left:auto;border:0;background:none;color:var(--ink-3);font-size:18px;line-height:1;padding:0 4px}
+.conn .x:hover{color:var(--danger)}
+.cwrap{margin-bottom:10px}
+.cwrap .conn{margin-bottom:4px}
+input.when{display:block;width:100%;padding:5px 8px;border:1px solid var(--line-2);border-radius:6px;background:var(--panel-2);font-size:12.5px}
+.steps{margin:0;padding-left:18px;color:var(--ink-2)}
+.steps li{margin-bottom:8px}

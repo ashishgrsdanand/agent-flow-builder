@@ -1,0 +1,14 @@
+# Settings for hosting on Netlify. Netlify reads this file automatically.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Built files have a hash in their names, so browsers may keep them for a year.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

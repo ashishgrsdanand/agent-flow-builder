@@ -1,0 +1,9 @@
+/* Small screens (must be loaded last) */
+
+@media (max-width:980px){
+  .app{height:auto}
+  main,main.wide{grid-template-columns:1fr;grid-template-rows:auto 62vh auto}
+  .palette{max-height:300px;border-right:0;border-bottom:1px solid var(--line)}
+  .side{border-left:0;border-top:1px solid var(--line);min-height:70vh}
+  #b-wide{display:none}
+}

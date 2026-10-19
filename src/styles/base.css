@@ -1,0 +1,22 @@
+/* Reset, buttons, toast, drag ghost and other shared pieces */
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--ink);font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+button,input,textarea,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.spacer{flex:1}
+.btn{border:1px solid var(--line-2);background:var(--panel);padding:6px 12px;border-radius:7px;font-size:13px}
+.btn:hover{background:var(--panel-2)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:600}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.danger{color:var(--danger);border-color:color-mix(in srgb,var(--danger) 45%,var(--line-2))}
+.btn.mini{padding:3px 9px;font-size:12px}
+.meta{font-size:12px;color:var(--ink-3)}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);opacity:0;pointer-events:none;background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:8px;font-size:13px;transition:opacity .18s,transform .18s;z-index:50;max-width:90vw}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+.ghost{position:fixed;z-index:60;pointer-events:none;transform:translate(-50%,-50%);display:flex;align-items:center;gap:8px;padding:7px 12px;background:var(--panel);border:1px solid var(--accent);border-radius:10px;box-shadow:0 8px 22px rgba(10,20,30,.25);font-weight:600;font-size:13px}
+code{font:12px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--panel-2);padding:1px 5px;border-radius:4px;border:1px solid var(--line);overflow-wrap:anywhere}
+button:disabled{opacity:.45;cursor:default}

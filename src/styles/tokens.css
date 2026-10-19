@@ -1,0 +1,32 @@
+/* Design tokens: colours for light and dark mode, and the agent colour classes */
+
+:root{
+  color-scheme: light;
+  --bg:#e8ecef; --panel:#fbfcfc; --panel-2:#f2f5f7; --ink:#16212b; --ink-2:#506070; --ink-3:#8493a1;
+  --line:#dbe1e6; --line-2:#c6cfd6; --grid:#cfd7de;
+  --accent:#2756e8; --accent-ink:#ffffff;
+  --warn-bg:#fff3d6; --warn-ink:#6d4a00; --danger:#c43b2f;
+  --code-bg:#f6f8f9; --code-ink:#22303c;
+  --hl-k:#7a3ee0; --hl-s:#17803d; --hl-c:#8493a1; --hl-d:#b4540a; --hl-n:#0b6aa8;
+  --c-sup:#7a4ee6; --c-0:#0e8f86; --c-1:#2e8f3e; --c-2:#c77a0a; --c-3:#cc3d66; --c-4:#5b6b7b;
+  --cond:#b45309; --live:#15803d;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    color-scheme: dark;
+    --bg:#10161c; --panel:#18212a; --panel-2:#1e2933; --ink:#e6ecf1; --ink-2:#a2b0bd; --ink-3:#6f7f8d;
+    --line:#2a3743; --line-2:#364555; --grid:#26323d;
+    --accent:#7f9cff; --accent-ink:#0d1330;
+    --warn-bg:#3b2f10; --warn-ink:#f3d78a; --danger:#ff7b6e;
+    --code-bg:#131b22; --code-ink:#dbe4ec;
+    --hl-k:#b79dff; --hl-s:#7fd496; --hl-c:#6f7f8d; --hl-d:#f2b062; --hl-n:#74bdf0;
+    --c-sup:#a58bff; --c-0:#3fd0c4; --c-1:#6fd47d; --c-2:#f0ae4a; --c-3:#ff7fa0; --c-4:#9fb0c0;
+    --cond:#f2a65a; --live:#4ade80;
+  }
+}
+.t-supervisor{--c:var(--c-sup)}
+.k0{--c:var(--c-0)}
+.k1{--c:var(--c-1)}
+.k2{--c:var(--c-2)}
+.k3{--c:var(--c-3)}
+.k4{--c:var(--c-4)}

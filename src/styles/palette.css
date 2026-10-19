@@ -1,0 +1,30 @@
+/* Left palette: domain picker, agent list, custom agent form, legend */
+
+.palette{min-width:0;border-right:1px solid var(--line);background:var(--panel);padding:14px 12px;overflow:auto}
+.palette h3{margin:0 0 6px;font-size:13px}
+.palette .sub{margin:0 0 10px;font-size:12px;color:var(--ink-3)}
+#domain{width:100%;padding:7px 8px;border:1px solid var(--line-2);border-radius:7px;background:var(--panel-2);margin-bottom:8px;font-size:13px}
+#b-team{width:100%;margin-bottom:12px}
+.pitem{display:flex;gap:9px;align-items:center;padding:7px 8px;border:1px solid var(--line);border-radius:9px;margin-bottom:6px;background:var(--panel-2);cursor:grab;touch-action:none;user-select:none}
+.pitem:hover{border-color:var(--line-2);background:var(--panel)}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--c);flex:none}
+.pt{min-width:0;flex:1}
+.pitem b{display:block;font-size:13px;line-height:1.25;overflow-wrap:anywhere}
+.pitem small{color:var(--ink-3);font-size:11.5px;line-height:1.25;display:block}
+.pitem .edit,.pitem .rm{flex:none;border:0;background:none;color:var(--ink-3);padding:4px;border-radius:5px;display:grid;place-items:center;line-height:1}
+.pitem .edit:hover{color:var(--accent);background:var(--panel)}
+.pitem .rm{font-size:17px;padding:0 5px}
+.pitem .rm:hover{color:var(--danger)}
+.pr{width:100%;padding:2px 5px;border:1px solid var(--accent);border-radius:5px;background:var(--panel);font-weight:600;font-size:13px}
+.mine{margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.mine input{display:block;width:100%;margin:0 0 6px;padding:6px 8px;border:1px solid var(--line-2);border-radius:7px;background:var(--panel-2);font-size:12.5px}
+.mine .btn{width:100%;margin-bottom:10px}
+.howto{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-2)}
+.howto p{margin:0 0 8px}
+.legend{display:flex;align-items:center;gap:8px;margin:0 0 6px;font-size:12px;color:var(--ink-2)}
+.legend svg{flex:none}
+
+.teambox{margin:0 0 12px}
+.teambox label{display:block;margin-bottom:5px;font-size:12px;font-weight:600;color:var(--ink-2)}
+.teambox input{display:block;width:100%;padding:6px 8px;border:1px solid var(--line-2);border-radius:7px;background:var(--panel-2);font-size:12.5px}
+.teambox .sub{margin:4px 0 0}
