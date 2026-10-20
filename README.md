@@ -126,32 +126,7 @@ Rule of thumb: anything about *what the code says* lives in `src/logic/` and is 
 - **State**: selection rules, ids, deleting, saving and opening (including saves from the first, single-file version).
 - **Render test**: the whole app is rendered for every tab and every domain, to catch crashes.
 
-## Deploy (GitHub + Netlify)
-
-1. **Check it locally first**: `npm install`, `npm test`, `npm run build`. This also creates `package-lock.json`, which you should commit.
-2. **Put it on GitHub**: create an empty repository (do not add a README or licence there, this project has them), then:
-   ```bash
-   git init
-   git add .
-   git commit -m "Agent Flow Builder"
-   git branch -M main
-   git remote add origin https://github.com/YOUR-NAME/agent-flow-builder.git
-   git push -u origin main
-   ```
-3. **Host it on Netlify**: Add new site > Import an existing project > GitHub > pick the repository. The settings come from `netlify.toml` (build command `npm run build`, publish folder `dist`). Press Deploy.
-4. From then on, every `git push` to `main` publishes a new version, and every pull request gets its own preview link.
-
-No keys or environment variables are needed: the app never talks to any AI service.
-
-**Without GitHub**: run `npm run build`, then drag the `dist/` folder onto Netlify's deploy area.
-**Other hosts** (Cloudflare Pages, Vercel, GitHub Pages): build command `npm run build`, publish folder `dist`. The build uses relative paths, so it also works from a sub-folder.
-
-## Status and limits
-
-- The generated code is checked to be valid Python, and its routing is tested with stand-ins for LangGraph and the model. **It has not been run against a real model API.** Run it once with your own key before you tell anyone it works end to end.
-- Tools are empty stubs. The block at the bottom of the generated file is a demo: in your own app, import `graph` and call `graph.invoke(...)`.
-- The simulator uses placeholder replies. Real LangGraph runs parallel branches at the same time; the simulator runs them one after another and says so.
 
 ## License
 
-MIT, see `LICENSE`.
+Copyright (c) 2026 Ashish Anand. All rights reserved. Not open source. See LICENSE

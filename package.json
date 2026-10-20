@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Draw a team of AI agents, get LangGraph code, and watch how the graph runs. Made for learning.",
   "type": "module",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
